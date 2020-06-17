@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>测试</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+   <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--    <script src="dataPlus.js"></script>
+   定义数据模型
+   <script src="modelDefine.js"></script> -->
+
+</head>
+<body>   
+<input type="file" onchange="upload(this)" />       
+</body>
+<script >
+
+    var storage=window.localStorage;
+    if(storage.name){
+    	storage.name = storage.name + '1'
+    }else{
+		storage.name = 'storage'
+    }
+    //alert(storage.name)
+   // pui.visualize('pageUser')
+   let name = 'ppppppppp'
+   let obj = {
+   	 nn : '23233'
+   }
+   let list = ['2323','5677','9999']
+   let a =
+   `package com.panwy.itask.controller;
+   	${list.map(addName).join('\n')}
+	import org.springframework.web.bind.annotation.RequestMapping;
+	import org.springframework.stereotype.Controller;
+	import org.springframework.ui.Model;
+
+	@Controller
+	public class Hello2 {
+	    @RequestMapping("/hello2")
+	    String test(final Model model){
+	        model.addAttribute("model", "User");
+	        return "hello2";
+	    }
+	}`
+
+   //alert(a)
+
+   function addName (data) {
+   		return `====${data}======`
+   }
+
+	function upload(input) {  
+		//支持chrome IE10  
+		//console.log(input)
+		if (window.FileReader) {  
+		    var file = input.files[0]; 
+		    console.log(file) 
+		    let filename = file.name.split(".")[0];  
+		    alert(filename)
+		    var reader = new FileReader();  
+		    reader.onload = function() {  
+		        //console.log(this.result);  
+		    }  
+		    reader.readAsText(file);  
+		}     
+	} 
+
+</script>
+</html> 
